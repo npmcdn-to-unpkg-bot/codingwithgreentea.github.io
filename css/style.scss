@@ -1,0 +1,21 @@
+$font-stack: Helvetica, sans-serif;
+$main-color: #e0e0e0;
+
+body {
+  font-family: $font-stack;
+}
+
+code {
+  background-color: $main-color;
+}
+
+#content {
+  display: inline-flex;
+}
+
+#md {
+  padding-top: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0;
+}

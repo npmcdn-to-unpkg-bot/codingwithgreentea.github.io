@@ -2,48 +2,15 @@
 <html lang="en" charset="utf-8">
   <head>
     <meta charset="utf-8" />
-    <title>FreeCodeCamp Markdown Previewer</title>
+    <title>CodingwithGreenTea</title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="https://npmcdn.com/react@15.3.0/dist/react.js"></script>
-    <script src="https://npmcdn.com/react-dom@15.3.0/dist/react-dom.js"></script>
-    <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.js" charset="utf-8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js" charset="utf-8"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.3.6/marked.min.js.map" charset="utf-8"></script>
   </head>
   <body>
-    <h1>Markdown Previewer</h1>
-    <h3>Built using ReactJS and Sass</h3>
-    <div id="main"></div>
-    <script type="text/babel">
-      var TextBox = React.createClass({
-        getInitialState: function() {
-          return {text: "# Start Typing Markdown here\n\n### It appears properly rendered below this textbox\n\n`code looks like this`\n\n*italics* _looks like_ *this*"};
-        },
-        handleChange: function(e) {
-          this.setState({text: e.target.value});
-        },
-        printMarkdown: function() {
-          return {__html: marked(this.state.text)};
-        },
-        render: function() {
-          return (
-            <div id="content">
-              <textarea
-                rows="25"
-                cols="50"
-                onChange = {this.handleChange}
-                value = {this.state.text} />
-              <div id="md" dangerouslySetInnerHTML={this.printMarkdown()}></div>
-            </div>
-          );
-        }
-      });
-
-      ReactDOM.render(
-        <TextBox />,
-        document.getElementById("main")
-      );
-    </script>
+    <h1>Coding With Green Tea</h1>
+    <h2>Projects</h2>
+    <ul>
+      <li><a href="markdown-previewer/"></a></li>
+    </ul>
+    <footer>Copyright (c) 2016 CodingwithGreenTea All Rights Reserved.</footer>
   </body>
 </html>

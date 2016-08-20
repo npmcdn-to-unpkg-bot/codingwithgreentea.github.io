@@ -1,0 +1,16 @@
+body {
+  font-family: Helvetica, sans-serif; }
+
+code {
+  background-color: #e0e0e0; }
+
+#content {
+  display: inline-flex; }
+
+#md {
+  padding-top: 0;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0; }
+
+/*# sourceMappingURL=style.css.map */

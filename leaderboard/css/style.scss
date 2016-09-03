@@ -1,0 +1,70 @@
+@import 'https://fonts.googleapis.com/css?family=Open+Sans';
+
+$color1: #e6ffcc;
+$color2: #ceff99;
+$title-color: #c1ff80;
+$font-stack: 'Open Sans', Helvetica, sans-serif;
+$dim: 60px;
+$border: solid 1px black;
+
+body {
+  font-family: $font-stack;
+  margin: 0;
+}
+
+header {
+  background-color: $color1;
+  top: 0;
+  margin: 0 0 20px 0;
+  padding: $dim / 2;
+  font-size: 2em;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+}
+
+tr {
+
+  th {
+    background-color: $color2;
+    padding: $dim/6;
+  }
+
+  #sort-alltime, #sort-recent {
+    cursor: pointer;
+  }
+
+  td {
+    height: $dim;
+    text-align: center;
+    background-color: #eeffe6;
+  }
+
+  #id {
+    width: $dim/2;
+  }
+
+  #img {
+    width: $dim;
+  }
+
+  #name {
+    width: $dim*3;
+  }
+
+  #recent {
+    width: $dim;
+  }
+
+  #alltime {
+    width: $dim;
+  }
+
+  img {
+    border-radius: 50%;
+    height: $dim * 0.9;
+    width: $dim * 0.9;
+  }
+}

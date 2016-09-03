@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Free Code Camp Leaderboard</title>
+    <script src="https://npmcdn.com/react@15.3.0/dist/react.js"></script>
+    <script src="https://npmcdn.com/react-dom@15.3.0/dist/react-dom.js"></script>
+    <script src="https://npmcdn.com/babel-core@5.8.38/browser.min.js"></script>
+    <script src="https://npmcdn.com/jquery@3.1.0/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header>
+      Free Code Camp Leaderboard (using React & SCSS)
+    </header>
+    <div id="container"></div>
+    <script type="text/babel">
+
+      var List = React.createClass({
+        getInitialState: function() {
+          return {data: []};
+        },
+        componentDidMount: function() {
+          $.ajax({
+            url: this.props.url + 'recent',
+            dataType: 'json',
+            success: function(val) {
+              this.setState({data: val});
+            }.bind(this)
+          });
+        },
+        handleChange: function(type) {
+          $.ajax({
+            url: this.props.url + type,
+            dataType: 'json',
+            success: function(val) {
+              this.setState({data: val});
+            }.bind(this)
+          });
+        },
+        render: function() {
+          return (
+            <table>
+              <thead>
+                <tr className="title">
+                  <th>Rank</th>
+                  <th>User</th>
+                  <th>Username</th>
+                  <th><span id="sort-recent" onClick={this.handleChange.bind(this, 'recent')}>Recent Points⇅</span></th>
+                  <th><span id="sort-alltime" onClick={this.handleChange.bind(this, 'alltime')}>All-Time Points⇅</span></th>
+                </tr>
+              </thead>
+              <ListItem data={this.state.data} />
+            </table>
+          );
+        }
+      });
+
+      var ListItem = React.createClass({
+        render: function() {
+          var item = this.props.data.map(function(val, id) {
+            return (
+              <tr key={id+1}>
+                <td id="id">{id+1}</td>
+                <td id="img"><img src={val.img} /></td>
+                <td id="name">{val.username}</td>
+                <td id="recent">{val.recent}</td>
+                <td id="alltime">{val.alltime}</td>
+              </tr>
+            );
+          });
+          return (
+            <tbody>
+              {item}
+            </tbody>
+          );
+        }
+      });
+
+      ReactDOM.render(
+        <List url="https://fcctop100.herokuapp.com/api/fccusers/top/" />,
+        document.getElementById('container')
+      );
+
+    </script>
+  </body>
+</html>

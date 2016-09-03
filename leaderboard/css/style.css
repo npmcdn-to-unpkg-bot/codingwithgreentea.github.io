@@ -1,0 +1,41 @@
+@import "https://fonts.googleapis.com/css?family=Open+Sans";
+body {
+  font-family: "Open Sans", Helvetica, sans-serif;
+  margin: 0; }
+
+header {
+  background-color: #e6ffcc;
+  top: 0;
+  margin: 0 0 20px 0;
+  padding: 30px;
+  font-size: 2em; }
+
+#container {
+  display: flex;
+  justify-content: center; }
+
+tr th {
+  background-color: #ceff99;
+  padding: 10px; }
+tr #sort-alltime, tr #sort-recent {
+  cursor: pointer; }
+tr td {
+  height: 60px;
+  text-align: center;
+  background-color: #eeffe6; }
+tr #id {
+  width: 30px; }
+tr #img {
+  width: 60px; }
+tr #name {
+  width: 180px; }
+tr #recent {
+  width: 60px; }
+tr #alltime {
+  width: 60px; }
+tr img {
+  border-radius: 50%;
+  height: 54px;
+  width: 54px; }
+
+/*# sourceMappingURL=style.css.map */
